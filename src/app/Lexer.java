@@ -8,6 +8,7 @@ public class Lexer {
     ArrayList<Tokens> toks = new ArrayList<>();
     ArrayList<Int> ints = new ArrayList<>();
     int int_index = -1;
+    int line = 1;
     String[] source = str.split(" ");
 
     for (int i = 0; i < source.length; i++) {
@@ -21,6 +22,9 @@ public class Lexer {
         toks.add(Tokens.ADD);
       } else if (c.equals("dump")) {
         toks.add(Tokens.DUMP);
+      } else if (c.equals("\n")) {
+        toks.add(Tokens.NEWLINE);
+        line++;
       } else {
         try {
           Integer.parseInt(c);
@@ -29,7 +33,7 @@ public class Lexer {
           ints.add(new Int(int_index, c));
 
         } catch (NumberFormatException e) {
-          System.out.printf("Unrecognized string: %s\n", c);
+          System.out.printf("Unrecognized string: %s at line: %d\n", c, line);
           System.exit(1);
         }
       }

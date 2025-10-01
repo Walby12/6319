@@ -6,4 +6,5 @@ public enum Tokens {
   ADD,
   DUMP,
   INT,
+  NEWLINE,
 }
