@@ -31,6 +31,8 @@ public class Lexer {
           case "+"    -> toks.add(Tokens.ADD);
           case "."    -> toks.add(Tokens.DUMP);
           case "eq"   -> toks.add(Tokens.EQUALS);
+          case "if"   -> toks.add(Tokens.IF);
+          case "end"   -> toks.add(Tokens.END);
           default -> {
             try {
               int n = Integer.parseInt(c);

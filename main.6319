@@ -1,3 +1,5 @@
-push 12 
-
-push 12 eq pop
+push 12 push 12 eq if
+  push 12 push 12 eq if
+    push 14 .
+  end
+end

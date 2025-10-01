@@ -7,5 +7,7 @@ public enum Tokens {
   DUMP,
   INT,
   EQUALS,
+  IF,
+  END,
   NEWLINE,
 }
