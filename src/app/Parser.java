@@ -18,14 +18,9 @@ public class Parser {
           System.out.printf("Error: Excpected an integer after the push op at tok %d at line %d but got: %s op\n", i + 1, line, t_r);
           System.exit(1);
         }
-        String val = r.ints().get(index_int).value;
-        try {
-          int n = Integer.parseInt(val);
-          stack.add(n);
-        } catch (NumberFormatException e) {
-          System.out.printf("Could not parse int at tok: %d at line: %d\n", i + 1, line);
-          System.exit(1);
-        }
+        int val = r.ints().get(index_int).getValue();
+        stack.add(val);
+        index_int++;
       } else if (t == Tokens.ADD) {
         if (stack.size() < 2) {
           System.out.printf("Error: the stack is not long enough for add op at tok: %d at line: %d\n", i + 1, line);
@@ -44,6 +39,14 @@ public class Parser {
           System.exit(1);
         }
         System.out.println(stack.remove(stack.size() - 1));
+      } else if (t == Tokens.EQUALS) {
+        if (stack.size() < 2) {
+          System.out.printf("Error: the stack is not long enough for equals op at tok: %d at line: %d\n", i + 1, line);
+          System.exit(1);
+        }
+        int a = stack.remove(stack.size() - 1);
+        int b = stack.remove(stack.size() - 1);
+        stack.add(a == b ? 1 : 0);
       }
     }
   }

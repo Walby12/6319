@@ -1,1 +1,3 @@
-push 12 push 12 + pop
+push 12 
+
+push 12 eq pop

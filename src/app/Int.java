@@ -1,14 +1,24 @@
 package src.app;
 
 public class Int {
-  int index;
-  String value;
+    int index;
+    int value;
 
-  Int (int i, String v) {
-    index = i;
-    value = v;
-  }
-  public void show() {
-    System.out.printf("Index: %d\nvalue: %s\n", index, value);
-  }
+    public Int(int i, int v) {
+        this.index = i;
+        this.value = v;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void show() {
+        System.out.printf("Index: %d, Value: %d\n", index, value);
+    }
+
+    @Override
+    public String toString() {
+        return String.valueOf(value);
+    }
 }
