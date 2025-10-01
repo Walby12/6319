@@ -5,4 +5,5 @@ public enum Tokens {
   POP,
   ADD,
   DUMP,
+  INT,
 }
