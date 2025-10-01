@@ -18,9 +18,9 @@ public class Lexer {
         toks.add(Tokens.PUSH);
       } else if (c.equals("pop")) {
         toks.add(Tokens.POP);
-      } else if (c.equals("add")) {
+      } else if (c.equals("+")) {
         toks.add(Tokens.ADD);
-      } else if (c.equals("dump")) {
+      } else if (c.equals(".")) {
         toks.add(Tokens.DUMP);
       } else if (c.equals("\n")) {
         toks.add(Tokens.NEWLINE);
